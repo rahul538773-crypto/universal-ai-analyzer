@@ -519,7 +519,20 @@ function renderMatches(matches){
     if(match.matchType)details.push("Type: "+match.matchType);
     if(match.venue)details.push("Venue: "+match.venue);
     if(match.date)details.push("Date: "+match.date);
-    if(match.dateTimeGMT)details.push("Time (GMT): "+match.dateTimeGMT);
+    if (match.dateTimeGMT) {
+  const matchTime = new Date(match.dateTimeGMT + "Z");
+  details.push(
+    "Match Time (IST): " +
+    matchTime.toLocaleString("en-IN", {
+      timeZone: "Asia/Kolkata",
+      day: "numeric",
+      month: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true
+    })
+  );
+}
 
     info.textContent=details.join(" | ")||"Match details unavailable";
   });
