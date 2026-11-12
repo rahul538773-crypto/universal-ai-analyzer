@@ -8,32 +8,19 @@
 
 <style>
 :root{
-  --bg:#080d19;
-  --panel:#111a2b;
-  --panel2:#17243a;
-  --text:#edf3ff;
-  --muted:#94a5bd;
-  --blue:#55a6ff;
-  --green:#35d49a;
-  --red:#ff647c;
-  --border:#293953;
+  --bg:#080d19;--panel:#111a2b;--panel2:#17243a;
+  --text:#edf3ff;--muted:#94a5bd;--blue:#55a6ff;
+  --green:#35d49a;--red:#ff647c;--border:#293953;
 }
 *{box-sizing:border-box}
 body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
+  margin:0;background:var(--bg);color:var(--text);
   font-family:Arial,Helvetica,sans-serif;
 }
 header{
-  padding:18px 5%;
-  border-bottom:1px solid var(--border);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-  background:#0c1424;
+  padding:18px 5%;border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  gap:12px;flex-wrap:wrap;background:#0c1424;
 }
 .logo{font-size:21px;font-weight:800}
 .logo span{color:var(--blue)}
@@ -45,87 +32,66 @@ h3{font-size:17px}
 .sub{color:var(--muted);margin-bottom:24px}
 .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
 button{
-  border:0;
-  border-radius:9px;
-  padding:12px 17px;
-  background:var(--blue);
-  color:#07111f;
-  font-weight:bold;
-  cursor:pointer;
+  border:0;border-radius:9px;padding:12px 17px;
+  background:var(--blue);color:#07111f;
+  font-weight:bold;cursor:pointer;
 }
 button.secondary{
-  background:var(--panel2);
-  color:var(--text);
+  background:var(--panel2);color:var(--text);
   border:1px solid var(--border);
 }
 button.danger{background:#542435;color:#fff}
-button:active{transform:scale(.98)}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
-}
+button:disabled{opacity:.5;cursor:not-allowed}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .card{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:15px;
-  padding:18px;
-  margin-bottom:15px;
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:15px;padding:18px;margin-bottom:15px;
 }
 .metric{font-size:27px;font-weight:800;margin-top:9px}
 .muted{color:var(--muted);font-size:13px}
 .section-title{font-size:19px;margin:5px 0 15px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:15px}
 input,select{
-  width:100%;
-  padding:13px;
-  margin:7px 0 12px;
-  border-radius:9px;
-  border:1px solid var(--border);
-  background:#0b1424;
-  color:var(--text);
-  font-size:15px;
+  width:100%;padding:13px;margin:7px 0 12px;
+  border-radius:9px;border:1px solid var(--border);
+  background:#0b1424;color:var(--text);font-size:15px;
 }
 label{font-size:13px;color:var(--muted)}
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .row>*{flex:1}
 table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{
-  text-align:left;
-  padding:12px 8px;
-  border-bottom:1px solid var(--border);
-}
+th,td{text-align:left;padding:12px 8px;border-bottom:1px solid var(--border)}
 th{color:var(--muted);font-weight:600}
 .table-wrap{overflow-x:auto}
 .hidden{display:none!important}
 .bar{
-  height:9px;
-  background:#25334b;
-  border-radius:10px;
-  overflow:hidden;
-  margin:8px 0 15px;
+  height:9px;background:#25334b;border-radius:10px;
+  overflow:hidden;margin:8px 0 15px;
 }
-.bar span{
-  display:block;
-  height:100%;
-  background:var(--blue);
-  border-radius:10px;
-}
+.bar span{display:block;height:100%;background:var(--blue);border-radius:10px}
 .notice{
-  padding:14px;
-  background:#1b2b43;
-  border-left:3px solid var(--blue);
-  border-radius:8px;
-  color:#c9d8ee;
-  font-size:13px;
-  line-height:1.6;
+  padding:14px;background:#1b2b43;border-left:3px solid var(--blue);
+  border-radius:8px;color:#c9d8ee;font-size:13px;line-height:1.6;
 }
-footer{
-  text-align:center;
-  color:var(--muted);
-  padding:25px;
-  font-size:12px;
+.match-card{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:13px;padding:17px;margin:12px 0;
 }
+.match-heading{
+  display:flex;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;margin-bottom:12px;
+}
+.match-name{font-weight:bold;font-size:16px}
+.match-status{color:var(--green);font-size:13px}
+.team-row{
+  display:flex;justify-content:space-between;gap:12px;
+  padding:10px 0;border-bottom:1px solid var(--border);
+}
+.team-row:last-child{border-bottom:0}
+.score{font-weight:bold;text-align:right}
+.live-info{color:var(--muted);font-size:13px;line-height:1.7}
+.api-state{font-size:13px;color:var(--muted);margin:12px 0}
+footer{text-align:center;color:var(--muted);padding:25px;font-size:12px}
 @media(max-width:750px){
   .grid{grid-template-columns:repeat(2,1fr)}
   .two{grid-template-columns:1fr}
@@ -149,187 +115,149 @@ footer{
 <main class="container">
 
 <h1>Analytics Dashboard</h1>
-<div class="sub">Statistics, historical records and sports analysis.</div>
+<div class="sub">Historical statistics, live cricket scores and sports analysis.</div>
 
 <div class="tabs">
-  <button class="tab active" data-tab="aviator"
-    onclick="showTab('aviator',this)">Round Statistics</button>
-  <button class="tab secondary" data-tab="cricket"
-    onclick="showTab('cricket',this)">Cricket Analyzer</button>
+  <button class="tab" onclick="showTab('aviator',this)">Round Statistics</button>
+  <button class="tab secondary" onclick="showTab('cricket',this)">Cricket Analyzer</button>
 </div>
 
-<!-- AVIATOR ANALYSIS -->
+<!-- AVIATOR HISTORICAL STATISTICS -->
 
 <section id="aviator">
 
 <div class="notice">
-  Educational statistical analysis only. Historical results cannot
-  reliably predict future rounds. This dashboard does not provide
-  betting signals or future multiplier predictions.
+  Educational statistical analysis only. Historical results cannot reliably
+  predict future rounds. No betting signals or future multiplier predictions.
 </div>
 
-<h2 class="section-title" style="margin-top:22px">
-  Historical Round Analysis
-</h2>
+<h2 class="section-title" style="margin-top:22px">Historical Round Analysis</h2>
 
 <div class="grid">
-
   <div class="card">
     <div class="muted">Total Records</div>
     <div class="metric" id="total">0</div>
   </div>
-
   <div class="card">
     <div class="muted">Average Multiplier</div>
     <div class="metric" id="average">0.00x</div>
   </div>
-
   <div class="card">
     <div class="muted">Highest Recorded</div>
     <div class="metric" id="highest">0.00x</div>
   </div>
-
   <div class="card">
     <div class="muted">Median</div>
     <div class="metric" id="median">0.00x</div>
   </div>
-
 </div>
 
 <div class="two">
-
   <div class="card">
     <h3 class="section-title">Add Historical Result</h3>
-
     <label>Recorded multiplier</label>
-    <input type="number" id="multiplier"
-      min="1" max="100000" step="0.01"
-      placeholder="Example: 2.45">
-
+    <input type="number" id="multiplier" min="1" max="100000" step="0.01" placeholder="Example: 2.45">
     <button onclick="addRound()">Save Result</button>
-
-    <p class="muted">
-      Enter only a result you have already observed.
-    </p>
+    <p class="muted">Enter only a result already observed.</p>
   </div>
 
   <div class="card">
     <h3 class="section-title">Recorded Distribution</h3>
-
     <div class="muted">Below 2x</div>
     <div class="bar"><span id="bar1" style="width:0%"></span></div>
-
     <div class="muted">2x to below 5x</div>
     <div class="bar"><span id="bar2" style="width:0%"></span></div>
-
     <div class="muted">5x and above</div>
     <div class="bar"><span id="bar3" style="width:0%"></span></div>
-
-    <div class="muted" id="distribution">
-      No records yet.
-    </div>
+    <div class="muted" id="distribution">No records yet.</div>
   </div>
-
 </div>
 
 <div class="card">
-
   <h3 class="section-title">Saved Round History</h3>
-
   <label>Search multiplier</label>
-  <input type="number" id="searchRound"
-    placeholder="Search recorded value"
-    oninput="renderRounds()">
+  <input type="number" id="searchRound" placeholder="Search recorded value" oninput="renderRounds()">
 
   <div class="row">
-    <button class="secondary" onclick="downloadCSV()">
-      Download CSV
-    </button>
-
-    <button class="danger" onclick="clearRounds()">
-      Clear All
-    </button>
+    <button class="secondary" onclick="downloadCSV()">Download CSV</button>
+    <button class="danger" onclick="clearRounds()">Clear All</button>
   </div>
 
   <div class="table-wrap">
     <table>
       <thead>
-        <tr>
-          <th>#</th>
-          <th>Multiplier</th>
-          <th>Category</th>
-          <th>Time</th>
-        </tr>
+        <tr><th>#</th><th>Multiplier</th><th>Category</th><th>Time</th></tr>
       </thead>
       <tbody id="history">
         <tr><td colspan="4">No records available</td></tr>
       </tbody>
     </table>
   </div>
-
 </div>
 </section>
 
-<!-- CRICKET ANALYSIS -->
+<!-- CRICKET DASHBOARD -->
 
 <section id="cricket" class="hidden">
 
 <div class="notice">
-  Cricket calculator: enter match figures to calculate run rate
-  and an estimated projected score. This version does not fetch live scores.
+  Live cricket data is retrieved from the connected CricketData API.
+  Scores and match availability depend on the provider's data.
+  Match projections are estimates, not guaranteed outcomes.
 </div>
 
-<h2 class="section-title" style="margin-top:22px">
-  Cricket Match Analyzer
-</h2>
+<h2 class="section-title" style="margin-top:22px">Live Cricket Dashboard</h2>
+
+<div class="card">
+  <div class="row">
+    <div>
+      <h3 class="section-title">Live Matches & Recent Matches</h3>
+      <div class="muted">Data provided by CricketData API</div>
+    </div>
+    <button id="refreshBtn" onclick="loadLiveMatches()">↻ Refresh Scores</button>
+  </div>
+
+  <div id="apiState" class="api-state">Waiting to connect...</div>
+  <div id="matchList">
+    <div class="muted">Press Refresh Scores to load matches.</div>
+  </div>
+</div>
 
 <div class="grid">
-
   <div class="card">
     <div class="muted">Current Score</div>
     <div class="metric" id="scoreMetric">0/0</div>
   </div>
-
   <div class="card">
     <div class="muted">Run Rate</div>
     <div class="metric" id="rrMetric">0.00</div>
   </div>
-
   <div class="card">
     <div class="muted">Projected Score</div>
     <div class="metric" id="projectedMetric">0</div>
   </div>
-
   <div class="card">
     <div class="muted">Overs Remaining</div>
     <div class="metric" id="remainingMetric">20</div>
   </div>
-
 </div>
 
 <div class="card">
-
-  <h3 class="section-title">Enter Match Details</h3>
+  <h3 class="section-title">Cricket Match Calculator</h3>
 
   <div class="two">
-
     <div>
       <label>Runs scored</label>
       <input id="runs" type="number" min="0" value="120">
     </div>
-
     <div>
       <label>Wickets lost</label>
-      <input id="wickets" type="number"
-        min="0" max="10" step="1" value="3">
+      <input id="wickets" type="number" min="0" max="10" step="1" value="3">
     </div>
-
     <div>
       <label>Overs completed (example: 12.3)</label>
-      <input id="overs" type="number"
-        min="0" max="50" step="0.1" value="12">
+      <input id="overs" type="number" min="0" max="50" step="0.1" value="12">
     </div>
-
     <div>
       <label>Total match overs</label>
       <select id="totalOvers">
@@ -337,16 +265,12 @@ footer{
         <option value="50">50 overs</option>
       </select>
     </div>
-
   </div>
 
   <button onclick="analyzeCricket()">Analyze Match</button>
-
-  <p class="muted" id="cricketMessage">
-    Enter match details to begin.
-  </p>
-
+  <p class="muted" id="cricketMessage">Enter match details to begin.</p>
 </div>
+
 </section>
 
 <footer>
@@ -357,15 +281,16 @@ footer{
 
 <script>
 
+/* CONFIGURATION */
+
+const API_BASE = "https://universal-ai-analyzer-api.onrender.com";
+const LIVE_API = API_BASE + "/api/live-matches";
+
 /* TAB NAVIGATION */
 
 function showTab(name,button){
-
-  document.getElementById("aviator")
-    .classList.toggle("hidden",name!=="aviator");
-
-  document.getElementById("cricket")
-    .classList.toggle("hidden",name!=="cricket");
+  document.getElementById("aviator").classList.toggle("hidden",name!=="aviator");
+  document.getElementById("cricket").classList.toggle("hidden",name!=="cricket");
 
   document.querySelectorAll(".tab").forEach(btn=>{
     btn.classList.remove("active");
@@ -374,6 +299,10 @@ function showTab(name,button){
 
   button.classList.add("active");
   button.classList.remove("secondary");
+
+  if(name==="cricket" && !matchesLoaded){
+    loadLiveMatches();
+  }
 }
 
 /* ROUND HISTORY */
@@ -384,10 +313,8 @@ try{
   const saved=JSON.parse(localStorage.getItem("ua_rounds")||"[]");
   if(Array.isArray(saved)){
     rounds=saved.filter(r=>
-      r &&
-      Number.isFinite(Number(r.value)) &&
-      Number(r.value)>=1 &&
-      typeof r.time==="string"
+      r && Number.isFinite(Number(r.value)) &&
+      Number(r.value)>=1 && typeof r.time==="string"
     );
   }
 }catch(error){
@@ -398,44 +325,32 @@ function saveRounds(){
   try{
     localStorage.setItem("ua_rounds",JSON.stringify(rounds));
   }catch(error){
-    alert("Browser storage unavailable. Please check browser settings.");
+    alert("Browser storage unavailable.");
   }
 }
 
 function addRound(){
-
   const field=document.getElementById("multiplier");
   const value=Number(field.value);
 
-  if(
-    field.value.trim()==="" ||
-    !Number.isFinite(value) ||
-    value<1 ||
-    value>100000
-  ){
+  if(field.value.trim()==="" || !Number.isFinite(value) || value<1 || value>100000){
     alert("Please enter a valid recorded multiplier.");
     return;
   }
 
-  rounds.unshift({
-    value:value,
-    time:new Date().toLocaleString()
-  });
-
+  rounds.unshift({value:value,time:new Date().toLocaleString()});
   saveRounds();
   field.value="";
   renderRounds();
 }
 
 function renderRounds(){
-
   const values=rounds.map(r=>Number(r.value));
   const total=values.length;
 
   document.getElementById("total").textContent=total;
 
   if(!total){
-
     ["average","highest","median"].forEach(id=>{
       document.getElementById(id).textContent="0.00x";
     });
@@ -443,32 +358,21 @@ function renderRounds(){
     document.getElementById("history").innerHTML=
       '<tr><td colspan="4">No records available</td></tr>';
 
-    document.getElementById("distribution").textContent=
-      "No records yet.";
+    document.getElementById("distribution").textContent="No records yet.";
 
     ["bar1","bar2","bar3"].forEach(id=>{
       document.getElementById(id).style.width="0%";
     });
-
     return;
   }
 
   const sorted=[...values].sort((a,b)=>a-b);
-
   const average=values.reduce((a,b)=>a+b,0)/total;
+  const median=total%2?sorted[(total-1)/2]:(sorted[total/2-1]+sorted[total/2])/2;
 
-  const median=total%2
-    ? sorted[(total-1)/2]
-    : (sorted[total/2-1]+sorted[total/2])/2;
-
-  document.getElementById("average").textContent=
-    average.toFixed(2)+"x";
-
-  document.getElementById("highest").textContent=
-    Math.max(...values).toFixed(2)+"x";
-
-  document.getElementById("median").textContent=
-    median.toFixed(2)+"x";
+  document.getElementById("average").textContent=average.toFixed(2)+"x";
+  document.getElementById("highest").textContent=Math.max(...values).toFixed(2)+"x";
+  document.getElementById("median").textContent=median.toFixed(2)+"x";
 
   const groups=[
     values.filter(v=>v<2).length,
@@ -477,118 +381,221 @@ function renderRounds(){
   ];
 
   ["bar1","bar2","bar3"].forEach((id,i)=>{
-    document.getElementById(id).style.width=
-      (groups[i]/total*100)+"%";
+    document.getElementById(id).style.width=(groups[i]/total*100)+"%";
   });
 
   document.getElementById("distribution").textContent=
-    "Below 2x: "+groups[0]+
-    " | 2x–5x: "+groups[1]+
-    " | 5x+: "+groups[2];
+    "Below 2x: "+groups[0]+" | 2x–5x: "+groups[1]+" | 5x+: "+groups[2];
 
-  const search=Number(document.getElementById("searchRound").value);
+  const query=document.getElementById("searchRound").value;
 
-  const filtered=rounds.filter(r=>{
-    const query=document.getElementById("searchRound").value;
-    return query==="" || Number(r.value).toString().includes(query);
-  });
+  const filtered=rounds.filter(r=>
+    query==="" || Number(r.value).toString().includes(query)
+  );
 
   const tbody=document.getElementById("history");
 
   if(!filtered.length){
-    tbody.innerHTML=
-      '<tr><td colspan="4">No matching records</td></tr>';
+    tbody.innerHTML='<tr><td colspan="4">No matching records</td></tr>';
     return;
   }
 
   tbody.innerHTML=filtered.map((r,i)=>{
-
-    const category=r.value<2
-      ? "Below 2x"
-      : r.value<5
-      ? "2x–5x"
-      : "5x+";
-
-    return `
-      <tr>
-        <td>${i+1}</td>
-        <td>${Number(r.value).toFixed(2)}x</td>
-        <td>${category}</td>
-        <td>${escapeHTML(r.time)}</td>
-      </tr>
-    `;
-
+    const category=r.value<2?"Below 2x":r.value<5?"2x–5x":"5x+";
+    return `<tr>
+      <td>${i+1}</td>
+      <td>${Number(r.value).toFixed(2)}x</td>
+      <td>${category}</td>
+      <td>${escapeHTML(r.time)}</td>
+    </tr>`;
   }).join("");
 }
 
 function escapeHTML(value){
-
   return String(value).replace(/[&<>"']/g,ch=>({
-    "&":"&amp;",
-    "<":"&lt;",
-    ">":"&gt;",
-    '"':"&quot;",
-    "'":"&#39;"
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
   })[ch]);
 }
 
 function clearRounds(){
-
-  if(!rounds.length){
-    alert("No records to clear.");
-    return;
-  }
-
-  if(!confirm("Delete all saved historical records?")){
-    return;
-  }
-
+  if(!rounds.length){alert("No records to clear.");return;}
+  if(!confirm("Delete all saved historical records?"))return;
   rounds=[];
   saveRounds();
   renderRounds();
 }
 
-/* CSV EXPORT */
-
 function downloadCSV(){
+  if(!rounds.length){alert("No records to download.");return;}
 
-  if(!rounds.length){
-    alert("No records to download.");
-    return;
-  }
+  const rows=[["Multiplier","Recorded Time"],...rounds.map(r=>[r.value,r.time])];
 
-  const rows=[
-    ["Multiplier","Recorded Time"],
-    ...rounds.map(r=>[r.value,r.time])
-  ];
+  const csv=rows.map(row=>row.map(value=>
+    '"'+String(value).replace(/"/g,'""')+'"'
+  ).join(",")).join("\n");
 
-  const csv=rows.map(row=>
-    row.map(value=>
-      '"'+String(value).replace(/"/g,'""')+'"'
-    ).join(",")
-  ).join("\n");
-
-  const blob=new Blob(
-    ["\uFEFF"+csv],
-    {type:"text/csv;charset=utf-8"}
-  );
-
+  const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8"});
   const url=URL.createObjectURL(blob);
   const a=document.createElement("a");
-
   a.href=url;
   a.download="round-history.csv";
   document.body.appendChild(a);
   a.click();
   a.remove();
-
   setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 
-/* CRICKET ANALYZER */
+/* LIVE CRICKET */
+
+let matchesLoaded=false;
+let refreshTimer=null;
+
+function addText(parent,tag,className,text){
+  const element=document.createElement(tag);
+  if(className)element.className=className;
+  element.textContent=text==null?"":String(text);
+  parent.appendChild(element);
+  return element;
+}
+
+function formatScore(score){
+  if(!score || typeof score!=="object")return "Score unavailable";
+
+  const runs=score.r??score.runs;
+  const wickets=score.w??score.wickets;
+  const overs=score.o??score.overs;
+
+  if(runs==null)return "Score unavailable";
+
+  let result=String(runs);
+
+  if(wickets!=null)result+="/"+wickets;
+  if(overs!=null)result+=" ("+overs+" ov)";
+
+  return result;
+}
+
+function renderMatches(matches){
+  const container=document.getElementById("matchList");
+  container.replaceChildren();
+
+  if(!Array.isArray(matches) || matches.length===0){
+    addText(container,"div","muted","No matches are currently available from the provider.");
+    return;
+  }
+
+  matches.forEach(match=>{
+    if(!match || typeof match!=="object")return;
+
+    const card=addText(container,"div","match-card","");
+    card.replaceChildren();
+
+    const heading=addText(card,"div","match-heading","");
+    addText(heading,"div","match-name",match.name||"Cricket Match");
+    addText(heading,"div","match-status",match.status||match.matchStatus||"Status unavailable");
+
+    const teams=Array.isArray(match.teams)?match.teams:[];
+    const scores=Array.isArray(match.score)?match.score:[];
+
+    if(teams.length){
+      teams.forEach((team,index)=>{
+        const row=addText(card,"div","team-row","");
+        addText(row,"div","",team);
+        addText(row,"div","score",formatScore(scores[index]));
+      });
+    }else if(scores.length){
+      scores.forEach((score,index)=>{
+        const row=addText(card,"div","team-row","");
+        addText(row,"div","","Innings "+(index+1));
+        addText(row,"div","score",formatScore(score));
+      });
+    }else{
+      addText(card,"div","live-info","Score details not supplied by provider.");
+    }
+
+    const info=addText(card,"div","live-info","");
+    const details=[];
+
+    if(match.matchType)details.push("Type: "+match.matchType);
+    if(match.venue)details.push("Venue: "+match.venue);
+    if(match.date)details.push("Date: "+match.date);
+    if(match.dateTimeGMT)details.push("Time (GMT): "+match.dateTimeGMT);
+
+    info.textContent=details.join(" | ")||"Match details unavailable";
+  });
+}
+
+async function loadLiveMatches(){
+  const state=document.getElementById("apiState");
+  const list=document.getElementById("matchList");
+  const button=document.getElementById("refreshBtn");
+
+  state.textContent="Connecting to Cricket API...";
+  button.disabled=true;
+
+  try{
+    const response=await fetch(LIVE_API,{
+      method:"GET",
+      headers:{"Accept":"application/json"}
+    });
+
+    let result;
+    try{
+      result=await response.json();
+    }catch(error){
+      throw new Error("Invalid response received from server.");
+    }
+
+    if(!response.ok){
+      throw new Error(result.error||"Server error: "+response.status);
+    }
+
+    if(!result.success){
+      throw new Error(result.error||"Cricket API request failed.");
+    }
+
+    const matches=Array.isArray(result.data)?result.data:[];
+
+    renderMatches(matches);
+    matchesLoaded=true;
+
+    const fetched=result.fetchedAt
+      ?new Date(result.fetchedAt).toLocaleTimeString()
+      :"just now";
+
+    state.textContent=
+      "✓ API Connected | "+matches.length+
+      " match record(s) | Updated: "+fetched;
+
+  }catch(error){
+    list.replaceChildren();
+    addText(list,"div","muted",error.message);
+
+    state.textContent="Unable to load live cricket data.";
+    matchesLoaded=false;
+
+  }finally{
+    button.disabled=false;
+  }
+}
+
+/* AUTO REFRESH EVERY 60 SECONDS */
+
+function startAutoRefresh(){
+  if(refreshTimer)clearInterval(refreshTimer);
+
+  refreshTimer=setInterval(()=>{
+    const cricket=document.getElementById("cricket");
+
+    if(cricket && !cricket.classList.contains("hidden")){
+      loadLiveMatches();
+    }
+  },60000);
+}
+
+/* CRICKET CALCULATOR */
 
 function analyzeCricket(){
-
   const runs=Number(document.getElementById("runs").value);
   const wickets=Number(document.getElementById("wickets").value);
   const overs=Number(document.getElementById("overs").value);
@@ -598,16 +605,10 @@ function analyzeCricket(){
   const decimal=Math.round((overs-whole)*10);
 
   if(
-    !Number.isFinite(runs) ||
-    runs<0 ||
-    !Number.isInteger(wickets) ||
-    wickets<0 ||
-    wickets>10 ||
-    !Number.isFinite(overs) ||
-    whole<0 ||
-    decimal<0 ||
-    decimal>5 ||
-    overs<0 ||
+    !Number.isFinite(runs)||runs<0||
+    !Number.isInteger(wickets)||wickets<0||wickets>10||
+    !Number.isFinite(overs)||whole<0||
+    decimal<0||decimal>5||
     whole*6+decimal>totalOvers*6
   ){
     alert("Please enter valid cricket match details.");
@@ -623,35 +624,24 @@ function analyzeCricket(){
 
   const totalBalls=totalOvers*6;
   const remainingBalls=totalBalls-validBalls;
-
   const runRate=runs/(validBalls/6);
+  const projected=Math.round(runs+runRate*(remainingBalls/6));
 
-  const projected=Math.round(
-    runs+runRate*(remainingBalls/6)
-  );
-
-  document.getElementById("scoreMetric").textContent=
-    runs+"/"+wickets;
-
-  document.getElementById("rrMetric").textContent=
-    runRate.toFixed(2);
-
-  document.getElementById("projectedMetric").textContent=
-    projected;
-
+  document.getElementById("scoreMetric").textContent=runs+"/"+wickets;
+  document.getElementById("rrMetric").textContent=runRate.toFixed(2);
+  document.getElementById("projectedMetric").textContent=projected;
   document.getElementById("remainingMetric").textContent=
     Math.floor(remainingBalls/6)+"."+(remainingBalls%6);
 
   document.getElementById("cricketMessage").textContent=
-    "Projection assumes the current run rate continues. " +
-    "Actual scores may differ.";
+    "Projection assumes the current run rate continues. Actual scores may differ.";
 }
 
 /* INITIAL LOAD */
 
 renderRounds();
+startAutoRefresh();
 
 </script>
-
 </body>
 </html>
